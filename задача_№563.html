@@ -1,0 +1,77 @@
+<!DOCTYPEhtml> 
+<html>
+ <head>
+ <title> лаб раб </title>
+ <!имя страницы> 
+<link rel="stylesheet" type="text/css" href="style.css"> 
+</head> 
+<body> 
+<form name="forma1"> Первое условие <input type="text" name="n" size="200" />
+<br />
+<br /> Второе условие <input type="text" name="a" size="200" />
+<br />
+<br /> 
+</form> 
+<script language="javascript">
+ var obrabotka = 0; 
+ var otvet1;
+ var otvet2;
+ for (var i = 0; i < 100; i++)
+ { 
+obrabotka = parseFloat(i) ^ 2; 
+if (obrabotka.length % 2 == 0) 
+{ 
+var obrabotka2 = 0;
+for (var q = 0; q < (obrabotka.length / 2) ; q++)
+ {
+ if (obrabotka[q] == obrabotka[obrabotka.length - q - 1])
+ { obrabotka2++; } 
+ } 
+if (obrabotka2 == (obrabotka.length / 2))
+ { 
+document.forma1.n.value = document.forma1.n.value + "," + parseString(obrabotka);
+} 
+} 
+else { var obrabotka2 = 0;
+ for (var q = 0; q < ((obrabotka.length - 1) / 2) ; q++)
+ { 
+if (obrabotka[q] == obrabotka[obrabotka.length - q - 1]) { obrabotka2++;
+ }
+ }
+ if (obrabotka2 == ((obrabotka.length - 1) / 2 ))
+ { document.forma1.n.value = document.forma1.n.value + "," + parseString(obrabotka);
+ } 
+}
+ } 
+arr = document.forma1.n.value.split(','); for (var i in arr)
+ { 
+if (i < 100) { obrabotka = parseFloat(i) ^ 2; if (obrabotka.length % 2 == 0)
+ { 
+var obrabotka2 = 0;
+for (var q = 0; q < (obrabotka.length / 2) ; q++)
+{ 
+if (obrabotka[q] == obrabotka[obrabotka.length - q - 1]) { obrabotka2++;
+ }
+ } 
+if (obrabotka2 == (obrabotka.length / 2)) 
+{
+ document.forma1.a.value = document.forma1.a.value + "," + parseString(obrabotka);
+ }
+ } 
+else 
+{ 
+var obrabotka2 = 0; 
+for (var q = 0; q < ((obrabotka.length - 1) / 2) ; q++) 
+{
+ if (obrabotka[q] == obrabotka[obrabotka.length - q - 1]) { obrabotka2++; 
+}
+}
+ if (obrabotka2 == ((obrabotka.length - 1) / 2)) 
+{ document.forma1.a.value = document.forma1.a.value + "," + parseString(obrabotka); 
+}
+}
+}
+} 
+</script>
+ </body>
+ </html>
